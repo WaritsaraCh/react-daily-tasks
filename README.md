@@ -6,21 +6,21 @@ A modern web application for managing **daily tasks and personal to-do lists**, 
 
 ## ✨ Key Features
 
-* ➕ **Quick Task Creation** – Add new tasks instantly via a streamlined input form
-* ✅ **Task Completion Tracking** – Mark tasks as completed or active
-* ✏️ **Edit Tasks** – Update task titles seamlessly
-* 🗑️ **Delete Tasks** – Remove tasks that are no longer needed
-* 🔍 **Search Functionality** – Quickly find tasks by keyword
-* 🧭 **Task Filtering** – View tasks by status:
+* **Quick Task Creation** – Add new tasks instantly via a streamlined input form
+* **Task Completion Tracking** – Mark tasks as completed or active
+* **Edit Tasks** – Update task titles seamlessly
+* **Delete Tasks** – Remove tasks that are no longer needed
+* **Search Functionality** – Quickly find tasks by keyword
+* **Task Filtering** – View tasks by status:
 
   * All
   * Active
   * Completed
-* 🎨 **Responsive & Minimal UI** – Optimized for daily use across devices
+* **Responsive & Minimal UI** – Optimized for daily use across devices
 
 ---
 
-## 🖥️ Application Overview
+## Application Overview
 
 This project demonstrates a practical **Daily Task Management** workflow, including:
 
@@ -44,13 +44,14 @@ The UI is intentionally minimal to support focused daily task planning.
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 newtodo/
 ├─ src/
 │  ├─ components/
 │  │  ├─ SearchBar.tsx
+│  │  ├─ Header.tsx
 │  │  ├─ TodoApp.tsx
 │  │  ├─ TodoFilter.tsx
 │  │  ├─ TodoForm.tsx
@@ -68,7 +69,7 @@ newtodo/
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Clone the Repository
 
@@ -97,22 +98,22 @@ http://localhost:5173
 
 ---
 
-## 📌 Planned Enhancements
+## Planned Enhancements
 
-* 💾 Persistent storage using LocalStorage or a backend database
-* 📅 Daily-based task grouping and views
-* 🌙 Dark mode support
-* 🔔 Task reminders and notifications
-* 🧪 Unit and integration testing
+* Persistent storage using LocalStorage or a backend database
+* Daily-based task grouping and views
+* Dark mode support
+* Task reminders and notifications
+* Unit and integration testing
 
 ---
 
-## 📄 License
+## License
 
 This project is intended for **learning, demonstration, and personal use**.
 
 ---
 
-## 👤 Author
+## Author
 
 Developed as a **front-end portfolio project** showcasing modern React, TypeScript, and UI development best practices.
