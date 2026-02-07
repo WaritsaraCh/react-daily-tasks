@@ -8,6 +8,7 @@ interface TodoItemProps {
   onEdit: (id: string) => void;
   isEditing: boolean;
 }
+
 const TodoItem: React.FC<TodoItemProps> = ({
   todo,
   onDelete,

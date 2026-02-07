@@ -37,12 +37,12 @@ const TodoForm: React.FC<TodoFormProps> = ({
       toast.success("Task updated! ✨");
     } else {
       onAddTodo(text);
-      toast.success("New task added! 🚀"); // เรียกใช้ toast จริงๆ
+      toast.success("New task added! 🚀"); 
     }
     setText("");
   };
 
-  // เพิ่ม Keyboard Shortcut: กด Esc เพื่อยกเลิกการแก้ไข
+  
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Escape" && editingTodo) {
       onCancelEdit();
@@ -51,7 +51,6 @@ const TodoForm: React.FC<TodoFormProps> = ({
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-2 group">
-      {/* ส่วนบอกสถานะเล็กๆ ด้านบน */}
       <div className="flex items-center gap-1 px-1">
         <span className="text-[10px] font-bold uppercase tracking-wider text-[#112e57]/40">
           {editingTodo ? "Editing Mode" : "Quick Add"}
