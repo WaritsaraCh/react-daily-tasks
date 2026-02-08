@@ -5,6 +5,12 @@ import TodoFilter from "./TodoFilter";
 import SearchBar from "./SearchBar";
 import Header from "./Header";
 import { ToastContainer, toast } from "react-toastify";
+import { DndContext, closestCenter, DragEndEvent } from "@dnd-kit/core";
+import {
+  arrayMove,
+  SortableContext,
+  verticalListSortingStrategy,
+} from "@dnd-kit/sortable";
 import Swal from "sweetalert2";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -84,6 +90,19 @@ const TodoApp: React.FC = () => {
       todo.text.toLowerCase().includes(searchTerm.toLowerCase()),
     );
 
+  const handleDragEnd = (event: DragEndEvent) => {
+    const { active, over } = event;
+
+    if (over && active.id !== over.id) {
+      setTodos((items) => {
+        const oldIndex = items.findIndex((i) => i.id === active.id);
+        const newIndex = items.findIndex((i) => i.id === over.id);
+
+        return arrayMove(items, oldIndex, newIndex);
+      });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-[#fdfdf4] flex flex-col items-center py-8 px-4">
       <div className="w-full max-w-md">
@@ -108,13 +127,18 @@ const TodoApp: React.FC = () => {
 
         <div className="bg-white rounded-xl shadow-md p-6 h-[350px] flex flex-col">
           <div className="flex-1 overflow-y-auto pr-2">
-            <TodoList
-              todos={filteredTodos}
-              onDelete={deleteTodo}
-              onToggle={toggleTodo}
-              onEdit={startEditing}
-              editingTodoId={editingTodoId}
-            />
+            <DndContext
+              collisionDetection={closestCenter}
+              onDragEnd={handleDragEnd}
+            >
+              <TodoList
+                todos={filteredTodos}
+                onDelete={deleteTodo}
+                onToggle={toggleTodo}
+                onEdit={startEditing}
+                editingTodoId={editingTodoId}
+              />
+            </DndContext>
           </div>
         </div>
       </div>
